@@ -44,11 +44,11 @@ class ToDoWriteActivity : AppCompatActivity() {
             header.put("Authorization", "token " + token!!)
             retrofitService.makeToDo(header, body).enqueue(object :Callback<Any>{
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
-
+                onBackPressed()
             }
 
             override fun onFailure(call: Call<Any>, t: Throwable) {
-
+                onBackPressed()
             }
         })
 
